@@ -6,8 +6,18 @@ import {
   FaReact, 
   FaHtml5, 
   FaCss3Alt,
+  FaPython,
+  FaJava
 } from 'react-icons/fa';
-import { SiNextdotjs, SiTailwindcss } from 'react-icons/si';
+import { 
+  SiNextdotjs, 
+  SiTailwindcss,
+  SiPandas,
+  SiScikitlearn,
+  SiFlask,
+  SiDjango,
+  SiCplusplus,
+} from 'react-icons/si';
 
 const iconMap = {
   javascript: FaJsSquare,
@@ -16,6 +26,13 @@ const iconMap = {
   css: FaCss3Alt,
   tailwind: SiTailwindcss,
   nextjs: SiNextdotjs,
+  python: FaPython,
+  java: FaJava,
+  pandas: SiPandas,
+  scikit: SiScikitlearn,
+  flask: SiFlask,
+  django: SiDjango,
+  cpp: SiCplusplus
 };
 
 const SkillCard = ({ title, level, description, iconName }) => {
