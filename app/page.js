@@ -2,8 +2,6 @@ import Image from "next/image";
 import SkillCard from "../components/skill_card.js";
 import { skills } from "../data/skills";
 import { Github, Linkedin, Mail } from "lucide-react";
-import { motion } from "framer-motion";
-import React from "react";
 
 export default function Home() {
   return (
@@ -18,7 +16,7 @@ export default function Home() {
               Hello, I'm <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Nevin</span>
             </h1>
             <h2 className="pt-2 text-xl sm:text-2xl md:text-4xl lg:text-5xl">
-              I'm a <span className="text-text font-semibold">Data Enthusiast</span>
+              I'm a <span className="text-text font-semibold typewriter ml-3">Data Enthusiast</span>
             </h2>
           </div>
           <div className="space-x-5 flex mt-5 font-bold justify-center md:justify-start">
@@ -47,7 +45,7 @@ export default function Home() {
       </div>
 
       {/* About Section */}
-      <div className="px-4 sm:px-6 lg:px-8 py-20 max-w-7xl mx-auto">
+      <div className="px-4 sm:px-6 lg:px-8 py-20 max-w-7xl mx-auto mt-20 widget">
         <div className="grid md:grid-cols-3 gap-12">
           {/* About Image */}
           <div className="flex justify-center">
@@ -60,7 +58,7 @@ export default function Home() {
             <div className="space-y-8">
               {/* About Header */}
               <div className="flex items-center gap-3">
-                <span className="text-primary font-semibold">ABOUT ME</span>
+                <span className="text-primary font-semibold" id="about">ABOUT ME</span>
                 <div className="h-0.5 w-12 bg-primary"></div>
               </div>
 
@@ -81,12 +79,12 @@ export default function Home() {
 
       {/* Skills Section */}
       <div className="mt-20 px-4 sm:px-10 md:px-20 lg:px-40">
-        <div className="flex flex-col items-center text-center">
-          <h2 className="text-4xl sm:text-5xl lg:text-8xl font-bold">
+        <div className="flex flex-col items-center text-center widget">
+          <h2 className="text-4xl sm:text-5xl lg:text-8xl font-bold" id="skills">
             VARIOUS <br /> <span className="text-primary"> EXPERT!SE</span>
           </h2>
         </div>
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 widget">
           {skills.map((skill, index) => (
             <SkillCard key={index} title={skill.title} level={skill.level} description={skill.description} icon={skill.icon} />
           ))}

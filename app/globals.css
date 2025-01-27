@@ -33,3 +33,45 @@ body {
 .profile_image{
   border-radius: 26% 74% 61% 39% / 27% 19% 81% 73% ;
 }
+
+@keyframes appear{
+  from{
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.widget{
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+
+.typewriter {
+  display: inline-flex;
+  overflow: hidden;
+  border-right: solid pink;
+  white-space: nowrap;
+  animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+  max-width: max-content;
+}
+
+@keyframes changeText {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: pink; }
+}
