@@ -41,7 +41,7 @@ export default function Home() {
         <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl transform rotate-6"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-950 to-background rounded-2xl">
-            <Image src="/images/photo.png" alt="Nevin's portrait" fill className="rounded-2xl object-cover grayscale" />
+            <Image src="/images/photo2.png" alt="Nevin's portrait" fill className="rounded-2xl object-cover " />
           </div>
         </div>
       </div>
