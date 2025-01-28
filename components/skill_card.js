@@ -41,7 +41,7 @@ const SkillCard = ({ title, level, description, iconName }) => {
 
   return (
     <div
-      className="relative p-6 rounded-xl bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-primary/50"
+      className="relative p-6 rounded-xl bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-primary/50 widget"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

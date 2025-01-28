@@ -2,6 +2,7 @@ import Image from "next/image";
 import SkillCard from "../components/skill_card.js";
 import { skills } from "../data/skills";
 import { Github, Linkedin, Mail } from "lucide-react";
+import EndeavoursCard from "../components/endeavours_carousel.js";
 
 export default function Home() {
   return (
@@ -58,7 +59,9 @@ export default function Home() {
             <div className="space-y-8">
               {/* About Header */}
               <div className="flex items-center gap-3">
-                <span className="text-primary font-semibold" id="about">ABOUT ME</span>
+                <span className="text-primary font-semibold" id="about">
+                  ABOUT ME
+                </span>
                 <div className="h-0.5 w-12 bg-primary"></div>
               </div>
 
@@ -79,7 +82,7 @@ export default function Home() {
 
       {/* Skills Section */}
       <div className="mt-20 px-4 sm:px-10 md:px-20 lg:px-40">
-        <div className="flex flex-col items-center text-center widget">
+        <div className="flex flex-col items-center text-center">
           <h2 className="text-4xl sm:text-5xl lg:text-8xl font-bold" id="skills">
             VARIOUS <br /> <span className="text-primary"> EXPERT!SE</span>
           </h2>
@@ -88,6 +91,21 @@ export default function Home() {
           {skills.map((skill, index) => (
             <SkillCard key={index} title={skill.title} level={skill.level} description={skill.description} icon={skill.icon} />
           ))}
+        </div>
+      </div>
+
+      {/* Projects Section*/}
+      <div className="mt-20 px-4 sm:px-10 md:px-20 lg:px-40 ">
+        <div className="flex flex flex-row items-center justify-center space-x-20">
+          <div className="text-4xl sm:text-5xl lg:text-6xl font-bold" id="Endeavors">
+            ENDEAVORS
+          </div>
+          <EndeavoursCard
+            imageUrl="/images/porto.png" // Ensure the image is in the public folder
+            title="Project 1"
+            description="A brief description of Project 1. Highlight key features or technologies used."
+            projectLink="https://example.com/project1"
+          />
         </div>
       </div>
     </div>
