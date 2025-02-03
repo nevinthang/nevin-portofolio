@@ -1,95 +1,139 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { name: "About Me", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
-    { name: "Experiences", href: "#experiences"},
+    { name: "Experiences", href: "#experiences" },
     { name: "Contact", href: "#contact" },
   ];
 
-  // Smooth scroll function
   const scrollToSection = (id) => {
     const element = document.querySelector(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-    setIsOpen(false); // Close menu on mobile after click
+    setIsOpen(false);
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.5,
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const mobileMenuVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: {
+        duration: 0.2,
+        staggerChildren: 0.07
+      }
+    },
+    exit: { 
+      opacity: 0, 
+      scale: 0.95,
+      transition: { duration: 0.2 }
+    }
   };
 
   return (
     <motion.nav
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="bg-transparent text-text fixed w-full z-50 px-10 font-sans"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled ? 'bg-background/80 backdrop-blur-lg shadow-lg' : 'bg-transparent'
+      }`}
     >
-      <div className="container mx-auto flex justify-between items-center py-4">
-        <motion.h1
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl font-bold"
-        >
-          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Nevin
-          </span>
-        </motion.h1>
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          <motion.div
+            variants={itemVariants}
+            className="text-2xl font-bold"
+          >
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Nevin
+            </span>
+          </motion.div>
 
-        {/* Mobile Menu Toggle */}
-        <div className="md:hidden">
+          {/* Desktop Navigation */}
+          <motion.div 
+            variants={containerVariants}
+            className="hidden md:flex items-center space-x-8"
+          >
+            {navItems.map((item) => (
+              <motion.button
+                key={item.name}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => scrollToSection(item.href)}
+                className="relative text-text hover:text-primary transition-colors group font-semibold"
+              >
+                {item.name}
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 transition-transform group-hover:scale-x-100" />
+              </motion.button>
+            ))}
+          </motion.div>
+
+          {/* Mobile Menu Button */}
           <motion.button
-            whileHover={{ scale: 1.1 }}
+            variants={itemVariants}
             whileTap={{ scale: 0.9 }}
-            onClick={toggleMenu}
-            className="focus:outline-none"
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-text hover:text-primary transition-colors"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </motion.button>
         </div>
 
-        {/* Desktop Navigation */}
-        <motion.div className="hidden md:flex space-x-6">
-          {navItems.map((item) => (
-            <motion.button
-              key={item.name}
-              onClick={() => scrollToSection(item.href)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="text-text hover:text-primary transition-colors font-semibold"
-            >
-              {item.name}
-            </motion.button>
-          ))}
-        </motion.div>
-
-        {/* Mobile Dropdown Menu */}
-        <AnimatePresence>
+        {/* Mobile Menu */}
+        <AnimatePresence mode="wait">
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="absolute top-16 left-0 w-full bg-background md:hidden"
+              variants={mobileMenuVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="absolute top-full left-0 w-full bg-background/90 backdrop-blur-lg shadow-lg md:hidden"
             >
               {navItems.map((item) => (
                 <motion.button
                   key={item.name}
+                  variants={itemVariants}
+                  whileTap={{ scale: 0.95 }}
                   onClick={() => scrollToSection(item.href)}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.2 }}
-                  className="block w-full text-left p-4 hover:bg-secondary text-text border-b border-gray-700"
+                  className="block w-full px-6 py-4 text-left text-text hover:bg-secondary hover:text-primary transition-colors font-semibold"
                 >
                   {item.name}
                 </motion.button>

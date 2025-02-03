@@ -7,7 +7,7 @@ import {
   FaHtml5, 
   FaCss3Alt,
   FaPython,
-  FaJava
+  FaJava,
 } from 'react-icons/fa';
 import { 
   SiNextdotjs, 
@@ -17,6 +17,8 @@ import {
   SiFlask,
   SiDjango,
   SiCplusplus,
+  SiDart,
+  SiFlutter,
 } from 'react-icons/si';
 
 const iconMap = {
@@ -32,7 +34,9 @@ const iconMap = {
   scikit: SiScikitlearn,
   flask: SiFlask,
   django: SiDjango,
-  cpp: SiCplusplus
+  cpp: SiCplusplus,
+  dart: SiDart,
+  flutter: SiFlutter
 };
 
 const skills = {
@@ -72,6 +76,12 @@ const skills = {
       level: 85,
       description: "Responsive design and modern layouts",
       iconName: "css"
+    },
+    {
+      title: "Dart",
+      level: 85,
+      description: "Programming language for building web and mobile apps",
+      iconName: "dart"
     }
   ],
   frameworks: [
@@ -98,6 +108,12 @@ const skills = {
       level: 75,
       description: "Lightweight web framework for Python",
       iconName: "flask"
+    },
+    {
+      title: "Flutter",
+      level: 85,
+      description: "Mobile framework for building cross-platform apps",
+      iconName: "flutter"
     }
   ],
   libraries: [
@@ -175,7 +191,7 @@ const SkillsSection = () => {
           <button
             key={category.id}
             onClick={() => setSelectedCategory(category.id)}
-            className={`px-6 py-2 rounded-lg font-medium transition-all duration-300 ${
+            className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
               selectedCategory === category.id
                 ? 'bg-primary text-white'
                 : 'bg-gray-800 text-gray-300 hover:bg-gray-700'

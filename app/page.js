@@ -22,7 +22,7 @@ export default function Home() {
               Hello, I'm <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Nevin</span>
             </h1>
             <h2 className="pt-2 text-xl sm:text-2xl md:text-4xl lg:text-5xl">
-              I'm a <span className="text-text font-semibold typewriter ml-3">Data Enthusiast</span>
+              I'm a <span className="text-text font-semibold typewriter">Data Enthusiast</span>
             </h2>
           </div>
 
