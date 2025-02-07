@@ -28,7 +28,7 @@ const ProjectCard = ({ project }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="group relative rounded-xl overflow-hidden bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 transition-all duration-300 hover:scale-[1.02] hover:border-primary/50">
+    <div className="group relative rounded-xl widget overflow-hidden bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 transition-all duration-300 hover:scale-[1.02] hover:border-primary/50">
     {/* Project Image */}
     <div className="relative h-48 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent z-10 opacity-60" />
