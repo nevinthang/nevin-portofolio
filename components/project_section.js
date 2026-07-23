@@ -1,24 +1,13 @@
 "use client";
 
 import React from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { projects } from "@/data/projects";
 
 function ProjectRow({ project, reversed }) {
-  const router = useRouter();
-  const go = () => router.push(`/work/${project.slug}`);
-
   return (
-    <div
-      role="button"
-      tabIndex={0}
-      onClick={go}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") go();
-      }}
-      className="group block relative cursor-pointer"
-    >
+    <Link href={`/work/${project.slug}`} className="group block relative">
       <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center py-10 md:py-16 border-b border-text/10">
         <span
           className="pointer-events-none absolute -top-6 md:-top-10 select-none font-bold text-text/[0.04] leading-none text-[7rem] sm:text-[10rem] md:text-[13rem]"
@@ -50,32 +39,34 @@ function ProjectRow({ project, reversed }) {
             </span>
 
             {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(project.github, "_blank", "noopener,noreferrer");
+                }}
                 className="text-gray-500 hover:text-primary transition-colors"
+                aria-label="View code"
               >
                 <FaGithub className="w-4 h-4" />
-              </a>
+              </button>
             )}
 
             {project.live && (
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(project.live, "_blank", "noopener,noreferrer");
+                }}
                 className="text-gray-500 hover:text-primary transition-colors"
+                aria-label="Live demo"
               >
                 <FaExternalLinkAlt className="w-3.5 h-3.5" />
-              </a>
+              </button>
             )}
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

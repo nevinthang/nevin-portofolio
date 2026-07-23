@@ -42,9 +42,9 @@ const experiences = [
     ],
     tags: ['Data QA', 'Annotation'],
   },
-  {
+{
     id: 4,
-    type: 'academic',
+    type: 'academic', 
     title: 'Research & Teaching Assistant',
     org: 'Universitas Indonesia',
     period: 'Jul 2024 – Present',
@@ -53,8 +53,33 @@ const experiences = [
       'Teaching: supported 4 courses — AI & Data Science, Platform-Based Programming, DSA, Programming Foundations — grading 100+ assignments weekly.',
     ],
     tags: ['Remote Sensing', 'Teaching'],
-    credential: 'B.S. Information Systems, Universitas Indonesia (2023–present)',
-    achievement: '3rd Winner — Falcon x Qatar Airways AI Competition',
+  },
+  {
+    id: 5,
+    type: 'academic',
+    title: 'Young Fellowship Programme – AI & Graduate Research',
+    org: 'National University of Singapore (NUS)',
+    period: 'Jun 2026 – Jul 2026',
+    bullets: [
+      'Selected for a highly competitive fellowship, with an intended research focus on Data-Centric AI, data quality frameworks, and advanced implementations in robust systems.',
+    ],
+    tags: ['Data-Centric AI', 'Research', 'Fellowship'],
+  },
+  {
+    id: 6,
+    type: 'academic',
+    title: 'B.S. Information Systems',
+    org: 'Universitas Indonesia',
+    period: 'Aug 2023 – Present',
+    bullets: [
+      '3rd Place – Falcon Project X Qatar Airways AI Infographic Competition (2024)',
+      'Finalist – Business Case BASIC Binus (2024)',
+      'Guest Speaker, Data Science & Analytics – Google Developer Groups on Campus UI (2026)',
+      'Person In Charge of Data Analytics Dash Competition - COMPFEST (2025)',
+      'People Operations Associate - RISTEK Fasilkom UI (2024)',
+    ],
+    tags: ['Undergraduate', 'Information Systems'],
+    credential: 'GPA: 3.96/4.00',
   },
 ];
 

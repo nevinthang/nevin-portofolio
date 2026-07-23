@@ -1,54 +1,102 @@
-import { Code2, Smartphone } from 'lucide-react';
-
 export const projects = [
   {
-    slug: 'portfolio-website',
+    slug: 'lexical-mutation-analysis',
     number: '01',
-    title: 'Portfolio Website',
-    tagline: 'First impression, solved in one scroll.',
-    description: 'A personal portfolio built to be remembered, not just viewed.',
-    tags: ['Next.js', 'Tailwind CSS', 'React'],
-    image: '/images/porto.png',
-    github: 'https://github.com/nevinthang/nevin-portofolio',
-    live: 'https://nevin-thang.vercel.app/',
+    title: 'Lexical Mutation Analysis',
+    tagline: 'Mapping public discourse across X and YouTube.',
+    description: 'A multi-layered hybrid analytical framework analyzing 35,000+ social data entries to map linguistic shifts.',
+    tags: ['Python', 'NLP', 'IndoBERTweet', 'E5-small', 'Clustering'],
+    image: '/images/porto-lexical.png', // Update with your actual image path
+    github: '', 
+    live: '#', // Replace with the actual Paper link
     featured: true,
     metrics: [
-      { label: 'Stack', value: 'Next.js' },
-      { label: 'Status', value: 'Live' },
-      { label: 'Type', value: 'Solo' },
+      { label: 'Data Volume', value: '35K+ Entries' },
+      { label: 'Accuracy', value: '85.90%' },
+      { label: 'Model', value: 'Transformers' },
     ],
     caseStudy: {
       problem:
-        'A portfolio that reads like a résumé gets skimmed for six seconds and closed. It needed a reason for a recruiter to actually stay.',
+        'Tracking shifting public sentiment and linguistic trends across platforms like X and YouTube is massive, noisy, and difficult to classify accurately.',
       approach:
-        'Built as an interactive, story-driven site instead of a template — Next.js and Tailwind, with copy and motion designed around a single clear hook, not a features list.',
+        'Engineered a multi-layered NLP framework using E5-small embeddings and fine-tuned IndoBERTweet transformers to automatically cluster and classify lexical mutations.',
       result:
-        'A site that gets remembered instead of just viewed — live and deployed on Vercel.',
+        'Achieved up to 85.90% classification accuracy on over 35,000 entries, providing clear visibility into complex public discourse patterns.',
     },
   },
   {
-    slug: 'balink',
+    slug: 'sales-analytics-dashboard',
     number: '02',
-    title: 'Balink',
-    tagline: 'Booking a ride in Bali: group chats → two taps.',
-    description: 'A web and mobile platform for renting transportation in Bali.',
-    tags: ['Python', 'Dart', 'Django', 'Flutter', 'Tailwind CSS'],
-    image: '/images/porto2.png',
-    github: 'https://github.com/B09-PBP/balink',
-    live: 'https://nevin-thang-balink.pbp.cs.ui.ac.id/',
+    title: 'Sales Analytics Dashboard',
+    tagline: 'Consolidating multi-source chaos into targeted marketing action.',
+    description: 'An end-to-end Power BI & SQL dashboard tracking KPIs and customer purchasing behavior.',
+    tags: ['Power BI', 'SQL', 'DAX', 'RFM Analysis'],
+    image: '/images/porto-insight.png', // Update with your actual image path
+    github: '#', // Replace with the actual Dashboard Repo link
+    live: '',
     featured: true,
     metrics: [
-      { label: 'Platforms', value: 'Web + Mobile' },
-      { label: 'Backend', value: 'Django' },
-      { label: 'Type', value: 'Team' },
+      { label: 'Stack', value: 'Power BI' },
+      { label: 'Logic', value: 'DAX' },
+      { label: 'Analysis', value: 'RFM' },
     ],
     caseStudy: {
       problem:
-        'Renting transportation in Bali usually meant scattered WhatsApp threads, unclear pricing, and no single place to actually book.',
+        'Transactional data was scattered across multiple sources, making it impossible to quickly see true profit margins or identify high-value customer segments.',
       approach:
-        'Built a full booking platform end to end — Django backend, Flutter mobile app, Tailwind web front-end — covering listings, booking, and confirmation in one flow.',
+        'Consolidated the raw data using SQL and built an interactive Power BI dashboard. Engineered DAX measures for precise KPIs (Profit Margin, AOV) and executed an RFM analysis.',
       result:
-        'A working, deployed platform travelers can book through directly — no more back-and-forth messaging.',
+        'Delivered a unified reporting view that directly informs and drives targeted marketing strategies based on actual purchasing behavior.',
+    },
+  },
+  {
+    slug: 'qatar-airways-analytics',
+    number: '03',
+    title: 'Qatar Airways Analytics',
+    tagline: 'Forecasting passenger satisfaction to drive airline loyalty.',
+    description: 'Customer segmentation and sentiment forecasting to enhance airline service quality.',
+    tags: ['K-Means', 'Sentiment Analysis', 'Forecasting', 'Data Strategy'],
+    image: '/images/porto-falcon.png', // Update with your actual image path
+    github: '',
+    live: '#', // Replace with the actual Infographic link
+    featured: true,
+    metrics: [
+      { label: 'Clustering', value: 'K-Means' },
+      { label: 'Sentiment', value: 'AFINN' },
+      { label: 'Algorithm', value: 'Exp. Smoothing' },
+    ],
+    caseStudy: {
+      problem:
+        'Airlines struggle to proactively predict satisfaction trends and identify exactly which customer segments require intervention to maintain long-term loyalty.',
+      approach:
+        'Applied K-Means clustering for customer segmentation, AFINN for sentiment analysis, and Exponential Smoothing to forecast future satisfaction trends based on historical data.',
+      result:
+        'Formulated clear, data-driven strategies that target service quality improvements. (Awarded 3rd Place at the Falcon Project X Competition).',
+    },
+  },
+  {
+    slug: 'sdc-inflation-forecasting',
+    number: '04',
+    title: 'Inflation Targeting Analytics',
+    tagline: 'Forecasting food commodity CPI to support monetary policy.',
+    description: 'Time-series forecasting and decomposition for macroeconomic indicators.',
+    tags: ['LightGBM', 'EDA', 'Time Series', 'STL Decomposition'],
+    image: '/images/porto-sdcc.png', // Update with your actual image path
+    github: '',
+    live: '#', // Replace with the actual Infographic link
+    featured: true,
+    metrics: [
+      { label: 'Model', value: 'LightGBM' },
+      { label: 'Analysis', value: 'Time Series' },
+      { label: 'Domain', value: 'Macroeconomics' },
+    ],
+    caseStudy: {
+      problem:
+        'Volatile food commodity prices make the Consumer Price Index (CPI) unpredictable, complicating inflation targeting and macroeconomic planning.',
+      approach:
+        'Conducted deep Exploratory Data Analysis (EDA) and STL decomposition on historical CPI data, then trained a LightGBM model for robust time-series forecasting.',
+      result:
+        'Delivered high-impact visualizations and predictive insights designed to directly inform and stabilize monetary policy decisions.',
     },
   },
 ];

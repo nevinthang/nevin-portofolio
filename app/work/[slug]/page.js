@@ -7,9 +7,37 @@ export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export default function CaseStudyPage({ params }) {
-  const project = getProjectBySlug(params.slug);
-  if (!project) return notFound();
+export default async function CaseStudyPage({ params }) {
+  // params may be a Promise — unwrap it per Next's streaming API
+  const resolvedParams = await params;
+  const slug = resolvedParams?.slug;
+
+  // Debug logs: prints requested slug and available slugs to server terminal
+  try {
+    // eslint-disable-next-line no-console
+    console.log('[case-study] requested slug:', slug);
+    // eslint-disable-next-line no-console
+    console.log('[case-study] available slugs:', projects.map((p) => p.slug).join(', '));
+  } catch (e) {}
+
+  const project = getProjectBySlug(slug);
+  if (!project) {
+    return (
+      <div className="bg-background text-text min-h-screen px-4 sm:px-10 md:px-20 lg:px-40 pt-32 pb-24">
+        <h2 className="text-2xl font-bold mb-4">Project not found: {params.slug}</h2>
+        <p className="text-text/70 mb-6">Available projects:</p>
+        <ul className="list-disc pl-6 space-y-2">
+          {projects.map((p) => (
+            <li key={p.slug}>
+              <Link href={`/work/${p.slug}`} className="text-primary underline">
+                {p.slug} — {p.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
 
   const currentIndex = projects.findIndex((p) => p.slug === params.slug);
   const nextProject = projects[(currentIndex + 1) % projects.length];
@@ -26,7 +54,7 @@ export default function CaseStudyPage({ params }) {
       </Link>
 
       {/* Header */}
-      <div className="max-w-4xl">
+      <div className="max-w-4xl mx-auto text-center">
         <span className="font-mono text-xs text-primary/70">
           CASE FILE {project.number} / {String(projects.length).padStart(2, "0")}
         </span>
@@ -40,7 +68,7 @@ export default function CaseStudyPage({ params }) {
       </div>
 
       {/* Metrics strip */}
-      <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-3xl mt-10 border-t border-b border-text/10 py-6">
+      <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-3xl mx-auto mt-10 border-t border-b border-text/10 py-6 text-center">
         {project.metrics.map((m, i) => (
           <div key={i} className="border-l-2 border-primary/40 pl-3 sm:pl-4">
             <div className="font-mono text-lg sm:text-2xl font-bold text-primary">{m.value}</div>
@@ -50,7 +78,7 @@ export default function CaseStudyPage({ params }) {
       </div>
 
       {/* Problem / Approach / Result — full room to breathe */}
-      <div className="max-w-3xl mt-16 space-y-14">
+      <div className="max-w-3xl mt-16 space-y-14 mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-[100px_1fr] gap-3 sm:gap-8">
           <p className="font-mono text-xs text-primary/70">01 — PROBLEM</p>
           <p className="text-lg sm:text-xl leading-relaxed text-text/90">{project.caseStudy.problem}</p>
@@ -66,15 +94,15 @@ export default function CaseStudyPage({ params }) {
       </div>
 
       {/* Stack + links */}
-      <div className="max-w-3xl mt-16 pt-8 border-t border-text/10">
-        <div className="flex flex-wrap gap-2 mb-8">
+      <div className="max-w-3xl mt-16 pt-8 border-t border-text/10 mx-auto text-center">
+        <div className="flex flex-wrap gap-2 mb-8 justify-center">
           {project.tags.map((tag, i) => (
             <span key={i} className="px-3 py-1 text-xs rounded-full bg-gray-900/80 text-primary border border-primary/20">
               {tag}
             </span>
           ))}
         </div>
-        <div className="flex gap-8">
+        <div className="flex gap-8 justify-center">
           {project.github && (
             <a
               href={project.github}
@@ -101,17 +129,14 @@ export default function CaseStudyPage({ params }) {
       </div>
 
       {/* Next case file */}
-      <Link
-        href={`/work/${nextProject.slug}`}
-        className="group mt-24 flex items-center justify-between max-w-3xl border-t border-text/10 pt-8"
-      >
-        <div>
-          <p className="font-mono text-xs text-text/40 mb-1">NEXT CASE FILE</p>
-          <p className="text-xl sm:text-2xl font-bold group-hover:text-primary transition-colors">
-            {nextProject.title}
-          </p>
+      <Link href={`/work/${nextProject.slug}`} className="group mt-36 max-w-3xl mx-auto border-t border-text/10 pt-12">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6  mt-20">
+          <div className="text-center">
+            <p className="font-mono text-xs text-text/40 mb-1">NEXT CASE FILE</p>
+            <p className="text-xl sm:text-2xl font-bold group-hover:text-primary transition-colors">{nextProject.title}</p>
+          </div>
+          <span className="font-mono text-primary transition-transform group-hover:translate-x-1">→</span>
         </div>
-        <span className="font-mono text-primary transition-transform group-hover:translate-x-1">→</span>
       </Link>
     </div>
   );

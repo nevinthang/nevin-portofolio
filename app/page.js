@@ -120,10 +120,10 @@ export default function Home() {
             </h1>
 
             <div className="space-y-2 text-text/70 text-sm sm:text-base max-w-md">
-              <p>Messy spreadsheets. Slow reports. Blind spots hiding your next move.</p>
+              <p>Fragmented databases. Slow reports. Blind spots hiding your next move.</p>
               <p>
-                I build the pipelines and dashboards that fix that — so your decisions
-                run on facts, not gut feel.
+                I architect the pipelines and interactive dashboards that fix that — so your 
+                business runs on facts, not guesswork.
               </p>
             </div>
 
@@ -143,7 +143,7 @@ export default function Home() {
             </div>
 
             <p className="font-mono text-xs text-text/50 pt-1">
-              Clean Pipelines <span className="text-primary">·</span> Clear Dashboards{" "}
+              Automated Pipelines <span className="text-primary">·</span> Clear Analytics{" "}
               <span className="text-primary">·</span> Confident Calls
             </p>
 
@@ -171,7 +171,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* About Section — now matching the eyebrow + glyph-swap heading pattern used by Skills/Projects/Pathway */}
+      {/* About Section */}
       <div className="mt-20 px-4 sm:px-10 md:px-20 lg:px-40">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-16" id="about">
@@ -184,7 +184,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-12 items-start">
-            {/* Portrait — field-note / spec card, matches hero's chart motif */}
+            {/* Portrait */}
             <div className="flex justify-center">
               <div className="group relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80">
                 <div className="absolute -top-2 -left-2 w-5 h-5 border-t-2 border-l-2 border-primary/50 z-10"></div>
@@ -192,14 +192,14 @@ export default function Home() {
 
                 <div className="relative w-full h-full rounded-2xl overflow-hidden border border-primary/20">
                   <Image
-                    src="/images/photo2.png"
+                    src="/images/photo2.png" // Pastikan nama file foto lu bener di sini
                     alt="Nevin Thang"
                     className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                     fill
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-background/80 backdrop-blur-sm px-3 py-2 font-mono text-[10px] text-text/60 flex justify-between">
                     <span>FIG. 01 — NEVIN THANG</span>
-                    <span className="text-primary">DATA GUIDE</span>
+                    <span className="text-primary">DATA ENGINEER</span>
                   </div>
                 </div>
               </div>
@@ -210,19 +210,18 @@ export default function Home() {
               <div className="space-y-8">
                 <blockquote className="text-2xl sm:text-4xl md:text-5xl font-bold italic leading-tight">
                   I don&apos;t do data for the sake of data.{" "}
-                  <span className="text-primary">I do it so decisions stop waiting on spreadsheets.</span>
+                  <span className="text-primary">I build systems so your team stops drowning in spreadsheets.</span>
                 </blockquote>
 
                 <div className="space-y-3 text-text/70 leading-relaxed text-sm sm:text-base max-w-xl">
                   <p>
-                    Reports that take days. Numbers nobody trusts. Manual work eating
-                    hours that should go to decisions. I&apos;ve spent the last few years
-                    building the pipelines that make that problem disappear.
+                    Manual reports that take days. Numbers nobody trusts. Hours wasted on data prep instead of actual analysis. 
+                    I engineer the pipelines and build the BI dashboards that make those bottlenecks disappear.
                   </p>
                   <p>
-                    Right now, that means automating contra settlement workflows as an
-                    Operations Intern at <span className="text-text font-medium">FedEx Express</span> — cutting
-                    the manual load so the team can focus on what actually needs a human.
+                    Recently, that meant architecting a warehouse-to-reporting pipeline at <span className="text-text font-medium">PT Reasuransi Nasional</span> to 
+                    cut manual prep time by 50%, and automating regional settlement workflows at <span className="text-text font-medium">FedEx Express</span> to 
+                    give back ~20 hours a month to the operations team.
                   </p>
                 </div>
 
@@ -233,26 +232,29 @@ export default function Home() {
                     <div className="text-xs text-text/60 leading-snug">less time prepping reports</div>
                   </div>
                   <div className="border-l-2 border-primary/40 pl-3">
-                    <div className="font-mono text-xl sm:text-2xl font-bold text-primary">8+</div>
-                    <div className="text-xs text-text/60 leading-snug">business classes reported end-to-end</div>
+                    <div className="font-mono text-xl sm:text-2xl font-bold text-primary">20hr</div>
+                    <div className="text-xs text-text/60 leading-snug">manual work saved monthly</div>
                   </div>
                   <div className="border-l-2 border-primary/40 pl-3">
                     <div className="font-mono text-xl sm:text-2xl font-bold text-primary">NUS</div>
-                    <div className="text-xs text-text/60 leading-snug">Young Fellowship, Data-Centric AI</div>
+                    <div className="text-xs text-text/60 leading-snug">Fellow, Data-Centric AI</div>
                   </div>
                 </div>
 
-                {/* Role log — mirrors the "TR4CK RECORD" section, one step earlier */}
+                {/* Role log */}
                 <div className="font-mono text-xs sm:text-sm text-text/60 border-t border-text/10 pt-4 space-y-1.5 max-w-xl">
                   <p className="flex justify-between">
                     <span><span className="text-primary">›</span> FedEx Express — Operations Intern</span>
                     <span className="text-text/40">current</span>
                   </p>
                   <p className="flex justify-between">
-                    <span><span className="text-primary/60">›</span> PT Reasuransi Nasional Indonesia — Data Analyst Intern</span>
+                    <span><span className="text-primary/60">›</span> NUS — AI & Research Fellow</span>
                   </p>
                   <p className="flex justify-between">
-                    <span><span className="text-primary/60">›</span> NUS Young Fellowship — Data-Centric AI</span>
+                    <span><span className="text-primary/60">›</span> PT Reasuransi Nasional — Data Analyst Intern</span>
+                  </p>
+                  <p className="flex justify-between">
+                    <span><span className="text-primary/60">›</span> Magpie — Data QA Freelance</span>
                   </p>
                 </div>
               </div>

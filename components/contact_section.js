@@ -38,7 +38,7 @@ const ContactForm = () => {
           {/* Primary + transitional CTA */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <a
-              href="/resume.pdf"
+              href="/docs/Nevin_Thang_Resume.pdf"
               download
               className="group w-full sm:w-auto px-8 py-4 bg-primary text-black font-bold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2"
             >
@@ -47,7 +47,7 @@ const ContactForm = () => {
             </a>
 
             <a
-              href="mailto:youremail@example.com"
+              href="mailto:nevinthang02@gmail.com"
               className="w-full sm:w-auto px-8 py-4 border border-primary/40 text-text font-bold rounded-lg hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-2"
             >
               <Mail className="w-4 h-4" />
