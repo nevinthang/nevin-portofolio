@@ -63,8 +63,8 @@ const StackCard = ({ stage, offset, onClick, reducedMotion }) => {
       <motion.div
         onClick={onClick}
         className={`relative w-[230px] sm:w-[270px] rounded-2xl border p-5 sm:p-6 select-none
-        bg-gradient-to-br from-gray-900 to-gray-950
-        ${isActive ? 'border-primary/60 shadow-2xl shadow-primary/10 cursor-default' : 'border-gray-800 hover:border-primary/40 cursor-pointer'}`}
+        bg-gradient-to-br from-surface-900 to-surface-950
+        ${isActive ? 'border-primary/60 shadow-2xl shadow-primary/10 cursor-default' : 'border-surface-800 hover:border-primary/40 cursor-pointer'}`}
         style={{ transformPerspective: 1200 }}
         animate={
           reducedMotion

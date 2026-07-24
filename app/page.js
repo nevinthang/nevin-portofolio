@@ -112,18 +112,18 @@ export default function Home() {
             </div>
 
             <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
-              Your data has answers.
+              Fragmented data slows
               <br />
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Your reports just aren&apos;t asking.
+                every decision behind it.
               </span>
             </h1>
 
             <div className="space-y-2 text-text/70 text-sm sm:text-base max-w-md">
-              <p>Fragmented databases. Slow reports. Blind spots hiding your next move.</p>
+              <p>Scattered databases. Reports that take days. Blind spots where your next move should be.</p>
               <p>
-                I architect the pipelines and interactive dashboards that fix that — so your 
-                business runs on facts, not guesswork.
+                I build the pipelines and dashboards that close that gap — so your team
+                runs on current numbers, not last week&apos;s guess.
               </p>
             </div>
 
@@ -149,7 +149,7 @@ export default function Home() {
 
             <div className="flex items-center gap-6 pt-4">
               <span className="text-sm text-text/60">
-                Guide: <span className="text-text font-semibold">Nevin Thang</span>
+                <span className="text-text font-semibold">Nevin Thang</span> — Data Engineer &amp; Analyst
               </span>
               <div className="flex gap-5">
                 <a href="https://github.com/nevinthang" className="text-text/60 hover:text-primary transition-colors">
@@ -176,10 +176,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-16" id="about">
             <span className="font-mono text-xs sm:text-sm text-primary/80 mb-3">
-              // not the hero of this story
+              // the short version
             </span>
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
-              TH3 <span className="text-primary">GU1DE</span>
+              WH0 Y0U&apos;RE <span className="text-primary">H1RING</span>
             </h2>
           </div>
 
@@ -192,14 +192,14 @@ export default function Home() {
 
                 <div className="relative w-full h-full rounded-2xl overflow-hidden border border-primary/20">
                   <Image
-                    src="/images/photo2.png" // Pastikan nama file foto lu bener di sini
+                    src="/images/photo2.png"
                     alt="Nevin Thang"
                     className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                     fill
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-background/80 backdrop-blur-sm px-3 py-2 font-mono text-[10px] text-text/60 flex justify-between">
                     <span>FIG. 01 — NEVIN THANG</span>
-                    <span className="text-primary">DATA ENGINEER</span>
+                    <span className="text-primary">DATA ANALYST & ENGINEER</span>
                   </div>
                 </div>
               </div>
@@ -209,19 +209,22 @@ export default function Home() {
             <div className="md:col-span-2">
               <div className="space-y-8">
                 <blockquote className="text-2xl sm:text-4xl md:text-5xl font-bold italic leading-tight">
-                  I don&apos;t do data for the sake of data.{" "}
-                  <span className="text-primary">I build systems so your team stops drowning in spreadsheets.</span>
+                  Data isn&apos;t the deliverable.{" "}
+                  <span className="text-primary">The decision it enables is.</span>
                 </blockquote>
 
                 <div className="space-y-3 text-text/70 leading-relaxed text-sm sm:text-base max-w-xl">
                   <p>
-                    Manual reports that take days. Numbers nobody trusts. Hours wasted on data prep instead of actual analysis. 
-                    I engineer the pipelines and build the BI dashboards that make those bottlenecks disappear.
+                    Manual reports that take days. Numbers nobody fully trusts. Hours lost
+                    to prep instead of analysis. I engineer the pipelines and build the BI
+                    dashboards that make those bottlenecks disappear.
                   </p>
                   <p>
-                    Recently, that meant architecting a warehouse-to-reporting pipeline at <span className="text-text font-medium">PT Reasuransi Nasional</span> to 
-                    cut manual prep time by 50%, and automating regional settlement workflows at <span className="text-text font-medium">FedEx Express</span> to 
-                    give back ~20 hours a month to the operations team.
+                    Recently, that meant architecting a warehouse-to-reporting pipeline at{" "}
+                    <span className="text-text font-medium">PT Reasuransi Nasional</span> that
+                    cut manual prep time by 50%, and automating regional settlement workflows
+                    at <span className="text-text font-medium">FedEx Express</span> that gave
+                    the operations team back roughly 20 hours a month.
                   </p>
                 </div>
 

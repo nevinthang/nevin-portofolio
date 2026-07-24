@@ -8,7 +8,7 @@ const ContactForm = () => {
 
   return (
     <div className="mt-32 px-4 sm:px-10 md:px-20 lg:px-40" id="contact">
-      <div className="relative max-w-4xl mx-auto text-center rounded-3xl border border-primary/20 bg-gradient-to-br from-gray-900 to-gray-950 px-6 py-16 sm:px-12 sm:py-20 overflow-hidden">
+      <div className="relative max-w-4xl mx-auto text-center rounded-3xl border border-primary/20 bg-gradient-to-br from-surface-900 to-surface-950 px-6 py-16 sm:px-12 sm:py-20 overflow-hidden">
         {/* Graph-paper backdrop, matches the hero signal chart */}
         <div
           className="absolute inset-0 opacity-[0.05]"
@@ -29,7 +29,7 @@ const ContactForm = () => {
             Stop guessing. <span className="text-primary">Start deciding.</span>
           </h2>
 
-          <p className="text-gray-400 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
+          <p className="text-surface-400 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
             If your team is still waiting days for a report, or making calls on a
             hunch instead of a number — that's the exact problem I fix. Grab the
             resume, or find me where the rest of the proof lives.
@@ -61,7 +61,7 @@ const ContactForm = () => {
               href="https://github.com/nevinthang"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-gray-400 hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-surface-400 hover:text-primary transition-colors"
             >
               <Github className="w-4 h-4" />
               Code
@@ -71,7 +71,7 @@ const ContactForm = () => {
               href="https://www.linkedin.com/in/nevin-thang"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-gray-400 hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-surface-400 hover:text-primary transition-colors"
             >
               <Linkedin className="w-4 h-4" />
               Connect

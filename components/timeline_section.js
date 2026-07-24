@@ -104,15 +104,15 @@ const TimelineCard = ({ experience, index }) => {
       </div>
 
       <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'pr-12' : 'pl-12'} mb-8`}>
-        <div className="relative p-6 rounded-2xl bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 transition-all duration-300 hover:border-primary/50">
+        <div className="relative p-6 rounded-2xl bg-gradient-to-br from-surface-900 to-surface-950 border border-surface-800 transition-all duration-300 hover:border-primary/50">
           <div
             className={`absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl transition-opacity duration-300 ${
               isHovered ? 'opacity-100' : 'opacity-0'
             }`}
           />
 
-          <div className="absolute -left-4 md:left-auto md:right-0 top-8 transform md:translate-x-1/2 w-8 h-8 rounded-full bg-gray-900 border-2 border-primary flex items-center justify-center z-10">
-            <Icon className={`w-4 h-4 ${isHovered ? 'text-primary' : 'text-gray-400'} transition-colors duration-300`} />
+          <div className="absolute -left-4 md:left-auto md:right-0 top-8 transform md:translate-x-1/2 w-8 h-8 rounded-full bg-surface-900 border-2 border-primary flex items-center justify-center z-10">
+            <Icon className={`w-4 h-4 ${isHovered ? 'text-primary' : 'text-surface-400'} transition-colors duration-300`} />
           </div>
 
           <div className="relative z-10 space-y-3">
@@ -125,12 +125,12 @@ const TimelineCard = ({ experience, index }) => {
 
             <div>
               <h3 className="text-lg sm:text-xl font-bold">{experience.title}</h3>
-              <div className="text-gray-400 font-medium text-sm">{experience.org}</div>
+              <div className="text-surface-400 font-medium text-sm">{experience.org}</div>
             </div>
 
             <div className="space-y-1.5 pt-1">
               {experience.bullets.map((b, i) => (
-                <p key={i} className="text-sm text-gray-400 leading-relaxed flex gap-2">
+                <p key={i} className="text-sm text-surface-400 leading-relaxed flex gap-2">
                   <span className="text-primary flex-shrink-0">›</span>
                   <span>{b}</span>
                 </p>
@@ -140,7 +140,7 @@ const TimelineCard = ({ experience, index }) => {
             {experience.tags && (
               <div className="flex flex-wrap gap-2 pt-2">
                 {experience.tags.map((tag, i) => (
-                  <span key={i} className="px-2 py-1 text-xs rounded-full bg-gray-800 text-primary border border-primary/20">
+                  <span key={i} className="px-2 py-1 text-xs rounded-full bg-surface-800 text-primary border border-primary/20">
                     {tag}
                   </span>
                 ))}
@@ -176,7 +176,7 @@ const PathwaySection = () => {
         <h2 className="text-4xl sm:text-5xl lg:text-8xl font-bold">
           TR4CK <span className="text-primary">RECORD</span>
         </h2>
-        <p className="mt-6 text-gray-400">
+        <p className="mt-6 text-surface-400">
           What I actually shipped, in the order I shipped it.
         </p>
       </div>

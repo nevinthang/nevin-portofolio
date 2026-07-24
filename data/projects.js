@@ -8,7 +8,7 @@ export const projects = [
     tags: ['Python', 'NLP', 'IndoBERTweet', 'E5-small', 'Clustering'],
     image: '/images/porto-lexical.png', // Update with your actual image path
     github: '', 
-    live: '#', // Replace with the actual Paper link
+    live: 'https://drive.google.com/file/d/1SjevIhhWhQ03ksBp5EB4gvHyTMwDr8R1/view?usp=drive_link', // Replace with the actual Paper link
     featured: true,
     metrics: [
       { label: 'Data Volume', value: '35K+ Entries' },
@@ -32,8 +32,8 @@ export const projects = [
     description: 'An end-to-end Power BI & SQL dashboard tracking KPIs and customer purchasing behavior.',
     tags: ['Power BI', 'SQL', 'DAX', 'RFM Analysis'],
     image: '/images/porto-insight.png', // Update with your actual image path
-    github: '#', // Replace with the actual Dashboard Repo link
-    live: '',
+    github: 'https://github.com/nevinthang/dashboard_project/tree/main/Sales%20Dashboard', // Replace with the actual Dashboard Repo link
+    live: 'https://drive.google.com/file/d/1613UErg3Wm4drPDT1rX-gNjjVKSxRsOT/view?usp=drive_link',
     featured: true,
     metrics: [
       { label: 'Stack', value: 'Power BI' },
@@ -58,7 +58,7 @@ export const projects = [
     tags: ['K-Means', 'Sentiment Analysis', 'Forecasting', 'Data Strategy'],
     image: '/images/porto-falcon.png', // Update with your actual image path
     github: '',
-    live: '#', // Replace with the actual Infographic link
+    live: 'https://drive.google.com/drive/folders/1NdsVCEg6quNO5pfOszhXAY0WNP1pr8fP?hl=ID', // Replace with the actual Infographic link
     featured: true,
     metrics: [
       { label: 'Clustering', value: 'K-Means' },
@@ -83,7 +83,7 @@ export const projects = [
     tags: ['LightGBM', 'EDA', 'Time Series', 'STL Decomposition'],
     image: '/images/porto-sdcc.png', // Update with your actual image path
     github: '',
-    live: '#', // Replace with the actual Infographic link
+    live: 'https://drive.google.com/drive/folders/1Tke3T4x-XHXyJ5BpmCvUuapAWWfr2ctC?hl=ID', // Replace with the actual Infographic link
     featured: true,
     metrics: [
       { label: 'Model', value: 'LightGBM' },
